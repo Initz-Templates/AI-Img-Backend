@@ -8,7 +8,11 @@ import multer from "multer";
 const app = express();
 const port = 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: '*', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'OPTIONS'], // Allow specific HTTP methods
+  allowedHeaders: ['Content-Type'], // Allow specific headers
+})); 
 
 dotenv.config();
 
